@@ -11,7 +11,7 @@
 
 # DECLARING VARIABLE ON TASK LEVEL
 
-- name: Demo on Task Level Variables
+- name: Demo on Task  Variables
   hosts: localhost
   tasks:
      - name: print URL1 variable
