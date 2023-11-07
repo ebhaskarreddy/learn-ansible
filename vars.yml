@@ -16,9 +16,10 @@
   tasks:
      - name: print URL1 variable
        ansible.builtin.debug:
+         msg: "{{ URL1 }}"
          vars:
          URL1: Sample.com
-         msg: "{{ URL1 }}"
+
 
 # Task level variables have higher presidency than play level variables
 
