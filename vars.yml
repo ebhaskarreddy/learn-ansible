@@ -49,7 +49,7 @@
   hosts: localhost
 
   tasks:
-  - name: get uptime of server
+  - name: get Uptime of server
     ansible.builtin-shell: uptime
     register: OUT
   - name: print OUT var
