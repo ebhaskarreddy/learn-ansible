@@ -45,7 +45,7 @@
 
       #if we want store output data
 
-- name: register variable example
+- name: Register Variable Example
   hosts: localhost
   register: OUT
   tasks:
