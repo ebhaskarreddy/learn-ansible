@@ -50,7 +50,7 @@
 
   tasks:
   - name: get Uptime of server
-    ansible.builtin-shell: uptime
+    ansible.builtin.shell: uptime
     register: OUT
   - name: print OUT var
     ansible.builtin.debug:
