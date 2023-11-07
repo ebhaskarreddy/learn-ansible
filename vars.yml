@@ -1,0 +1,56 @@
+#DECLARING VARIABLE PLAY LEVEL
+
+- name: Demo on Variables
+  hosts: localhost
+  vars:
+      URL: sample.com
+  tasks:
+   - name: Print URL Variable
+     ansible.builtin.debug:
+       msg: "{{ URL }}"
+
+# DECLARING VARIABLE ON TASK LEVEL
+
+- name: Demo on Task Level Variables
+  hosts: localhost
+  tasks:
+     - name: print URL1 variable
+       ansible.builtin.debug:
+         vars:
+         URL1: Sample.com
+         msg: "{{ URL1 }}"
+
+# Task level variables have higher presidency than play level variables
+
+- name: Demo on Task Level Variables
+  hosts: localhost
+  vars:
+    URL1: example.com
+    URL2: example.com
+    tasks:
+    - name: print URL1 variable
+      ansible.builtin.debug:
+         msg: "{{ URL1 }}"
+      vars:
+         URL1: sample.com
+    - name: print URL2 variable
+      ansible.builtin.debug:
+        msg: "{{ URL2 }}"
+      vars:
+        URL2: sample.com
+
+
+      #COMMAND LEVEL HAVE HIGHEST PRESIDENCY
+      # ansible-plyabook vars.yml -e URL1 = example.com -e URL2= example.com
+
+      #if we want store output data
+
+- name: register variable example
+  hosts: localhost
+  register: OUT
+  tasks:
+  - name: get uptime of server
+    ansible.builtin-shell: uptime
+  - name: print OUT var
+    ansible.builtin.debug:
+      msg: "{{ OUT }}"
