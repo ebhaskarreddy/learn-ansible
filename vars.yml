@@ -10,17 +10,6 @@
        msg: "{{ URL }}"
 
 # DECLARING VARIABLE ON TASK LEVEL
-
-- name: Demo on Task  Variables
-  hosts: localhost
-  tasks:
-     - name: print URL1 variable
-       ansible.builtin.debug:
-         msg: "{{ URL1 }}"
-         vars:
-         URL1: Sample.com
-
-
 # Task level variables have higher presidency than play level variables
 
 - name: Demo on Task Level Variables
